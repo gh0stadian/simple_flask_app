@@ -1,6 +1,16 @@
 # CryptoExchange app
 This is a simple app that allows you to check the current price of cryptocurrencies in selectable currency. 
-It uses the ccxt library to get the data.
+It uses the ccxt library to get the crypto price data.
+These prices are stored in a database and can be viewed in paginated form. 
+
+## Endpoints
+1. GET  `/price/<currency>` - Gets and stores the price of the cryptocurrency price
+2. GET  `/price/history?page=1` - List of all the prices stored in the database. If you not specify the page, it will default to 1
+3. DELETE `price/history` - Deletes all the prices stored in the database
+
+## Prerequisites
+1. Python 3.11
+2. PostgreSQL database (or any other database that SQLAlchemy supports, but you will have to install required dependencies)
 
 ## Installation
 1. Clone the repository
